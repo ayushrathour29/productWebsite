@@ -1,4 +1,12 @@
 # LuxeJewels - Jewelry Website
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
 
 A modern jewelry e-commerce website built with React frontend and Go backend, featuring dynamic pricing based on gold prices and color variations for products.
 
