@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/gorilla/handlers"
@@ -296,6 +297,11 @@ func main() {
 		handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
 	)(r)
 
-	fmt.Println("Server starting on port 8080...")
-	log.Fatal(http.ListenAndServe(":8080", corsHandler))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // default for local development
+		}
+	fmt.Println("Server running on port:", port)
+	http.ListenAndServe(":"+port, corsHandler)
+
 }
